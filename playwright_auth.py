@@ -13,9 +13,11 @@ with sync_playwright() as playwright:
     login_button.click()
     wrong_email_or_password_alert = page.locator('//div[@data-testid="login-page-wrong-email-or-password-alert"]')
     expect(wrong_email_or_password_alert).to_be_visible()
-    expect(wrong_email_or_password_alert).to_have_text("Wrong email or password")
-    page.wait_for_timeout(15000)
+    expect(wrong_email_or_password_alert).to_have_text("Wrong email or password or the account does not exist.")
+    page.wait_for_timeout(5000)
+    # chromium.close()
     chromium.close()
+
 
 
 

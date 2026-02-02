@@ -17,7 +17,8 @@
 <div>
     <h1 id="h1-text-id">H1 Header text</h1>
     <h2 class="h2-text-class">H2 Header text</h2>
-    <h6 id="h6-text-class">H6 Header text</h6>
+    <h6 class="h2-text-class">H6 Header text</h6>
+    <h6 id="h6-text-class">Doubled H6 Header text</h6>
     <p>Paragraph text Auto-wait. <span style="color: red">Playwright</span> waits for elements to be actionable prior to performing actions. It also has a rich set of introspection events.
     </p>
     <a href="https://playwright.dev/" target="_blank">Python</a>
@@ -34,9 +35,9 @@
     <form action="/action" method="POST">
     <label>
         <input type="text" value="12345" placeholder="Placeholder text">
-        <input type="email" placeholder="Email">
+        <input required type="email" placeholder="Email">
         <input type="password" placeholder="Password">
-        <textarea placeholder="Textarea placeholder" required>Placeholder</textarea>
+        <textarea required placeholder="Textarea placeholder">Placeholder</textarea>
         <button type="submit" disabled>ButtonTextLabel</button>
     </label>
     </form>
@@ -44,8 +45,8 @@
         <thead>
             <tr>
                 <th>Header 1</th>
-                <th>Header 2</th>
-                <td>Header 3</td>
+                <td>Header 2</td>
+                <th>Header 3</th>
             </tr>
         </thead>
         <tbody>

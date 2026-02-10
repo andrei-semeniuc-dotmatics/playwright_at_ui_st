@@ -1,10 +1,12 @@
 from playwright.sync_api import sync_playwright, expect
+import pytest
 
+@pytest.mark.regression
+@pytest.mark.auth
 def test_wrong_email_or_password():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
         page = browser.new_page()
-        # page.goto("https://example.com/login")
         page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
 
         # email_input = page.locator('//div[@data-testid="login-form-email-input"]//div//input')
@@ -24,5 +26,5 @@ def test_wrong_email_or_password():
         expect(wrong_email_or_password_alert).to_be_visible()
         expect(wrong_email_or_password_alert).to_have_text("Wrong email or password")
 
-        # page.wait_for_timeout(2500)
+        page.wait_for_timeout(2500)
         # browser.close()

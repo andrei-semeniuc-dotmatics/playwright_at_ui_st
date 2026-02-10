@@ -3,14 +3,14 @@ from playwright.sync_api import sync_playwright, expect
 def test_empty_courses_list():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
-        page = browser.new_page()
+        # page = browser.new_page()
         context = browser.new_context()
         page = context.new_page()
 
         page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
 
         email_input = page.get_by_test_id("registration-form-email-input").locator("input")
-        email_input.fill("username1@gmail.com")
+        email_input.fill("username@gmail.com")
 
         username_input = page.get_by_test_id("registration-form-username-input").locator("input")
         username_input.fill("username")

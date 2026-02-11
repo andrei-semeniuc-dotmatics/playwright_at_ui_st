@@ -3,7 +3,7 @@ import pytest
 
 @pytest.mark.regression
 @pytest.mark.auth
-def test_wrong_email_or_password():
+def test_wrong_email_or_password_auth():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
         page = browser.new_page()
